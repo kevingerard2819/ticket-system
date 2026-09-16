@@ -65,6 +65,7 @@ func main() {
 
 	app := &App{store: store, jwtSecret: []byte(secret)}
 	mux := http.NewServeMux()
+	mux.HandleFunc("GET /{$}", app.root)
 	mux.HandleFunc("GET /health", app.health)
 	mux.HandleFunc("POST /auth/register", app.register)
 	mux.HandleFunc("POST /auth/login", app.login)
@@ -75,6 +76,13 @@ func main() {
 
 	log.Printf("ticket system listening on :%s", port)
 	log.Fatal(http.ListenAndServe("0.0.0.0:"+port, mux))
+}
+
+func (a *App) root(w http.ResponseWriter, r *http.Request) {
+	writeJSON(w, http.StatusOK, map[string]string{
+		"service": "ticket-system",
+		"status":  "ok",
+	})
 }
 
 func LoadStore(path string) (*Store, error) {
