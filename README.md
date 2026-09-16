@@ -109,10 +109,8 @@ curl https://YOUR-RENDER-SERVICE.onrender.com/health
 
 ## Deployment URL
 
-To be filled after Render deployment:
-
-- API base URL:
-- Health check URL:
+- API base URL: https://ticket-system-d2j7.onrender.com
+- Health check URL: https://ticket-system-d2j7.onrender.com/health
 
 ## Assumptions
 
