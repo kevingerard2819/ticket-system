@@ -1,0 +1,5 @@
+.tools/
+.gocache/
+.gopath/
+ticket-system.exe
+data.json
