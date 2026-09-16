@@ -311,9 +311,6 @@ func validStatus(status string) bool {
 }
 
 func validTransition(from, to string) bool {
-	if from == to {
-		return true
-	}
 	switch from {
 	case "open":
 		return to == "in_progress"

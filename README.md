@@ -117,4 +117,3 @@ curl https://YOUR-RENDER-SERVICE.onrender.com/health
 - The assignment allows a simple persistent store, so this implementation uses a JSON file.
 - Ticket creation always starts with status `open`.
 - Users must move tickets from `open` to `in_progress`, then from `in_progress` to `closed`.
-- Repeating the same status is treated as valid and leaves the ticket in that status.
